@@ -54,10 +54,12 @@ function renderMenu(items) {
 
 // Fyller dropdownen #category-filter med kategorierna från menyn
 function populateCategories() {
-  menu.forEach((item) => {
+  const categories = [...new Set(menu.map((item) => item.category))];
+
+  categories.forEach((category) => {
     const option = document.createElement("option");
-    option.value = item.category;
-    option.textContent = item.category;
+    option.value = category;
+    option.textContent = category;
     categoryFilter.append(option);
   });
 }

@@ -3,6 +3,7 @@ const orderTotal = document.querySelector("#order-total");
 const orderCount = document.querySelector("#order-count");
 const placeOrderButton = document.querySelector("#place-order");
 const orderMessage = document.querySelector("#order-message");
+const deleteOrderButton = document.querySelector("#delete")
 
 // Allt som ligger i beställningen just nu
 let order = [];
@@ -47,4 +48,9 @@ function renderOrder() {
 
 placeOrderButton.addEventListener("click", () => {
   orderMessage.textContent = "Tack för din beställning!";
+});
+
+deleteOrderButton.addEventListener("click", () => { 
+  order = [];
+  renderOrder();
 });

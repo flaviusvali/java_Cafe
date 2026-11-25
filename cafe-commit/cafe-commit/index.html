@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café Commit</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="logo">Café Commit</h1>
+        <p class="tagline">Kaffe, kod och kanelbullar</p>
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="menu-section">
+        <h2>Meny</h2>
+
+        <div class="controls">
+          <div class="control">
+            <label for="search">Sök</label>
+            <input type="search" id="search" placeholder="Sök på menyn..." />
+          </div>
+
+          <div class="control">
+            <label for="category-filter">Kategori</label>
+            <select id="category-filter">
+              <option value="alla">Alla kategorier</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <label for="sort">Sortera</label>
+            <select id="sort">
+              <option value="standard">Standard</option>
+              <option value="price-asc">Pris: lågt till högt</option>
+              <option value="price-desc">Pris: högt till lågt</option>
+              <option value="name-asc">Namn: A–Ö</option>
+              <option value="rating-desc">Högst betyg</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <label for="max-price">Maxpris: <span id="max-price-value">80</span> kr</label>
+            <input type="range" id="max-price" min="20" max="80" step="5" value="80" />
+          </div>
+
+          <div class="control control-checkbox">
+            <input type="checkbox" id="veg-only" />
+            <label for="veg-only">Bara vegetariskt</label>
+          </div>
+        </div>
+
+        <p id="result-count" class="result-count"></p>
+
+        <ul id="menu-list" class="menu-grid"></ul>
+      </section>
+
+      <aside class="order-section">
+        <h2>Din beställning (<span id="order-count">0</span>)</h2>
+
+        <ul id="order-list" class="order-list"></ul>
+
+        <p id="order-total" class="order-total">Totalt: 0 kr</p>
+
+        <fieldset class="serving">
+          <legend>Hur vill du ha det?</legend>
+          <label><input type="radio" name="serving" value="Äta här" checked /> Äta här</label>
+          <label><input type="radio" name="serving" value="Ta med" /> Ta med</label>
+        </fieldset>
+
+        <button id="place-order" class="button">Beställ</button>
+        <p id="order-message"></p>
+      </aside>
+
+      <section class="add-section">
+        <h2>Lägg till på menyn</h2>
+
+        <form id="add-form">
+          <label for="new-name">Namn</label>
+          <input type="text" id="new-name" />
+
+          <label for="new-category">Kategori</label>
+          <select id="new-category">
+            <option value="Kaffe">Kaffe</option>
+            <option value="Te">Te</option>
+            <option value="Bakverk">Bakverk</option>
+            <option value="Smörgåsar">Smörgåsar</option>
+            <option value="Kalla drycker">Kalla drycker</option>
+          </select>
+
+          <label for="new-price">Pris (kr)</label>
+          <input type="text" id="new-price" />
+
+          <label class="checkbox-label">
+            <input type="checkbox" id="new-vegetarian" /> Vegetarisk
+          </label>
+
+          <button type="submit" class="button">Lägg till</button>
+          <p id="form-error" class="form-error"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Café Commit – en övningsapp för JavaScript 1</p>
+    </footer>
+
+    <!-- Ordningen spelar roll: data först, main sist -->
+    <script src="js/data.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

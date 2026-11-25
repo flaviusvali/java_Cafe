@@ -24,6 +24,14 @@ function renderOrder() {
   orderList.innerHTML = "";
   let total = 0;
 
+  
+    if (order.length === 0){
+    orderMessage.textContent = "Din beställning är tom – lägg till något gott från menyn";
+  } else{
+  orderMessage.textContent = "";
+}
+  
+
   order.forEach((item, index) => {
     const li = document.createElement("li");
     li.classList.add("order-row");
@@ -48,7 +56,8 @@ function renderOrder() {
 
 placeOrderButton.addEventListener("click", () => {
   if (order.length === 0){
-    orderMessage.textContent = "Din beställning är tom – lägg till något gott från menyn";
-  } else{
+    orderMessage.textContent = "Du måste lägga till något innan du beställer!";
+    return;
+  } 
   orderMessage.textContent = "Tack för din beställning!";
-}});
+});

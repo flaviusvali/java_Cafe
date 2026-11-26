@@ -12,12 +12,12 @@ addForm.addEventListener("submit", (e) => {
     id: menu.length + 1,
     name: nameInput.value,
     category: categoryInput.value,
-    price: priceInput.value,
+    price: Number(priceInput.value),
     vegetarian: vegetarianInput.checked,
     rating: 0,
     allergens: [],
   };
-
+  
   menu.push(newItem);
   updateMenu();
   addForm.reset();

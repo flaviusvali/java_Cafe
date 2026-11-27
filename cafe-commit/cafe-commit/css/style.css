@@ -189,6 +189,14 @@ h3 {
   color: var(--color-veg);
 }
 
+.badge-popular {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #e0832b;
+}
+
 .menu-card .button {
   margin-top: auto;
 }

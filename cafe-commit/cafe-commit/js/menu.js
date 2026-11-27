@@ -21,6 +21,12 @@ function createMenuCard(item) {
   const rating = document.createElement("p");
   rating.classList.add("menu-rating");
   rating.textContent = "Betyg: " + item.rating;
+  if (item.rating >= 4.5) {
+    const badgePopular = document.createElement("span")
+    badgePopular.classList.add("badge-popular")
+    badgePopular.textContent = "Populär";
+    li.append(badgePopular);
+  }
 
   li.append(category, name, price, rating);
 
